@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kuber Associates — Leading iron & steel traders. HR coils, sheets, plates & structural steel. Trusted distribution across India." />
+  <title>Kuber Associates | Iron & Steel Traders</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-dark: #0a0c10;
+      --bg-card: #12151c;
+      --bg-elevated: #1a1e28;
+      --steel: #8b9aab;
+      --steel-light: #c5cdd8;
+      --accent: #e85d04;
+      --accent-glow: #ff6b1a;
+      --gold: #d4a853;
+      --text: #eef1f5;
+      --text-muted: #8a919c;
+      --border: rgba(139, 154, 171, 0.15);
+      --gradient-steel: linear-gradient(135deg, #2a3140 0%, #4a5568 50%, #2a3140 100%);
+      --gradient-fire: linear-gradient(135deg, #e85d04, #ff8c42);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--accent); color: #fff; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
+    }
+
+    nav.scrolled {
+      background: rgba(10, 12, 16, 0.92);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 var(--border);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .logo-icon {
+      width: 44px; height: 44px;
+      background: var(--gradient-fire);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 20px rgba(232, 93, 4, 0.35);
+    }
+
+    .logo-text span:first-child {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      display: block;
+      line-height: 1.1;
+    }
+
+    .logo-text span:last-child {
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--gradient-fire);
+      color: #fff !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 6px;
+      font-weight: 600 !important;
+      box-shadow: 0 4px 16px rgba(232, 93, 4, 0.3);
+      transition: transform 0.2s, box-shadow 0.2s !important;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(232, 93, 4, 0.45);
+      color: #fff !important;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      width: 26px; height: 2px;
+      background: var(--text);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 7rem 2rem 4rem;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(232, 93, 4, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 20% 80%, rgba(74, 85, 104, 0.2) 0%, transparent 50%),
+        var(--bg-dark);
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(139, 154, 171, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139, 154, 171, 0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 70%);
+    }
+
+    .hero-beam {
+      position: absolute;
+      top: -20%; right: -10%;
+      width: 55%;
+      height: 140%;
+      background: linear-gradient(160deg, transparent 30%, rgba(139, 154, 171, 0.06) 45%, rgba(232, 93, 4, 0.08) 55%, transparent 70%);
+      transform: skewX(-12deg);
+      animation: beamShift 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes beamShift {
+      0% { opacity: 0.6; transform: skewX(-12deg) translateX(0); }
+      100% { opacity: 1; transform: skewX(-12deg) translateX(-30px); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(232, 93, 4, 0.12);
+      border: 1px solid rgba(232, 93, 4, 0.3);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent-glow);
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.4); }
+    }
+
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 7vw, 6.5rem);
+      line-height: 0.95;
+      letter-spacing: 3px;
+      animation: fadeUp 0.8s 0.1s ease both;
+    }
+
+    .hero h1 .highlight {
+      background: var(--gradient-fire);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 1.5rem 0 2.5rem;
+      font-weight: 300;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--gradient-fire);
+      color: #fff;
+      box-shadow: 0 4px 24px rgba(232, 93, 4, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(232, 93, 4, 0.5);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--steel);
+      background: rgba(139, 154, 171, 0.08);
+      transform: translateY(-3px);
+    }
+
+    .hero-visual {
+      position: relative;
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
+
+    .hero-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gradient-fire);
+    }
+
+    .hero-stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .hero-stat {
+      background: var(--bg-elevated);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .hero-stat:hover {
+      border-color: rgba(232, 93, 4, 0.4);
+      transform: translateY(-4px);
+    }
+
+    .hero-stat .num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+      color: var(--accent-glow);
+      line-height: 1;
+    }
+
+    .hero-stat .label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero-steel-bar {
+      margin-top: 1.25rem;
+      height: 8px;
+      border-radius: 4px;
+      background: var(--gradient-steel);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-steel-bar::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 6rem 2rem; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      letter-spacing: 2px;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      max-width: 600px;
+      font-size: 1.05rem;
+      font-weight: 300;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── EDGE CARDS ── */
+    .edge-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .edge-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .edge-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(232, 93, 4, 0.35);
+    }
+
+    .edge-card .icon {
+      width: 52px; height: 52px;
+      background: rgba(232, 93, 4, 0.12);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .edge-card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .edge-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 300;
+    }
+
+    .edge-card .card-num {
+      position: absolute;
+      top: 1rem; right: 1.25rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4rem;
+      color: rgba(139, 154, 171, 0.06);
+      line-height: 1;
+    }
+
+    /* ── ABOUT ── */
+    .about-section {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+
+    .about-image {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background:
+        linear-gradient(135deg, rgba(232,93,4,0.2), transparent 60%),
+        url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&q=80') center/cover;
+    }
+
+    .about-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,12,16,0.8) 0%, transparent 50%);
+    }
+
+    .about-exp-badge {
+      position: absolute;
+      bottom: 1.5rem; left: 1.5rem;
+      background: rgba(10, 12, 16, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+    }
+
+    .about-exp-badge .big {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      color: var(--accent-glow);
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+
+    .about-exp-badge .small {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .about-text p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-weight: 300;
+      font-size: 1.02rem;
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .about-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .about-feature .check {
+      width: 22px; height: 22px;
+      background: rgba(232, 93, 4, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline-section { background: var(--bg-dark); }
+
+    .timeline {
+      position: relative;
+      margin-top: 4rem;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), var(--border));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 3rem 2.5rem;
+    }
+
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2rem; top: 0.4rem;
+      width: 14px; height: 14px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 3px solid var(--bg-dark);
+      box-shadow: 0 0 0 3px rgba(232, 93, 4, 0.3);
+    }
+
+    .timeline-year {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--accent-glow);
+      letter-spacing: 2px;
+    }
+
+    .timeline-item h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0.25rem 0 0.5rem;
+    }
+
+    .timeline-item p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 300;
+      max-width: 600px;
+    }
+
+    /* ── STATS ── */
+    .stats-section {
+      background:
+        radial-gradient(ellipse 60% 80% at 50% 50%, rgba(232, 93, 4, 0.08) 0%, transparent 60%),
+        var(--bg-card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .stat-box {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .stat-box .counter {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4rem;
+      letter-spacing: 2px;
+      background: var(--gradient-fire);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+
+    .stat-box .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 0.5rem;
+    }
+
+    /* ── PRODUCTS ── */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .product-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      group: product;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .product-img {
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .product-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, var(--bg-card) 0%, transparent 60%);
+    }
+
+    .product-body { padding: 1.5rem; }
+
+    .product-body h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-body p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    .product-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(232, 93, 4, 0.1);
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+    }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      margin: 0 2rem;
+      max-width: calc(1200px + 4rem);
+      margin-left: auto;
+      margin-right: auto;
+      background: var(--gradient-fire);
+      border-radius: 20px;
+      padding: 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .cta-banner h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      letter-spacing: 2px;
+      position: relative;
+    }
+
+    .cta-banner p {
+      opacity: 0.9;
+      margin-top: 0.5rem;
+      position: relative;
+    }
+
+    .cta-banner .btn {
+      background: #fff;
+      color: var(--accent);
+      flex-shrink: 0;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .cta-banner .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-section { padding-bottom: 4rem; }
+
+    .testimonial-slider {
+      margin-top: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .testimonial-card {
+      min-width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3rem;
+      text-align: center;
+    }
+
+    .testimonial-card .quote-icon {
+      font-size: 3rem;
+      color: var(--accent);
+      opacity: 0.4;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-card blockquote {
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--steel-light);
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .testimonial-role {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 0.25rem;
+    }
+
+    .testimonial-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .dot.active {
+      background: var(--accent);
+      transform: scale(1.3);
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      margin-top: 3rem;
+    }
+
+    .contact-info-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .contact-icon {
+      width: 48px; height: 48px;
+      background: rgba(232, 93, 4, 0.12);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-info-item h4 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-info-item p {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.9rem 1.1rem;
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      transition: border-color 0.3s;
+      width: 100%;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus,
+    .contact-form select:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .contact-form textarea { resize: vertical; min-height: 120px; }
+
+    .contact-form select option { background: var(--bg-elevated); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg-dark);
+      border-top: 1px solid var(--border);
+      padding: 3rem 2rem 1.5rem;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .footer-brand p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      font-weight: 300;
+      max-width: 280px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-col ul { list-style: none; }
+
+    .footer-col li { margin-bottom: 0.6rem; }
+
+    .footer-col a {
+      color: var(--steel-light);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    .footer-col a:hover { color: var(--accent); }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 1024px) {
+      .hero-content { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .edge-grid, .products-grid { grid-template-columns: 1fr 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0; right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--bg-card);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5rem 2rem 2rem;
+        gap: 1.5rem;
+        transition: right 0.4s ease;
+        border-left: 1px solid var(--border);
+      }
+
+      .nav-links.open { right: 0; }
+
+      .hamburger { display: flex; }
+      .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+      .hamburger.open span:nth-child(2) { opacity: 0; }
+      .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+      .edge-grid, .products-grid, .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-features { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .cta-banner { flex-direction: column; text-align: center; padding: 2.5rem 1.5rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+      section { padding: 4rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#" class="logo">
+      <div class="logo-icon">K</div>
+      <div class="logo-text">
+        <span>KUBER ASSOCIATES</span>
+        <span>Iron & Steel Traders</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#testimonials">Clients</a></li>
+      <li><a href="#contact" class="nav-cta">Get Quote</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-beam"></div>
+    <div class="hero-content">
+      <div>
+        <div class="hero-badge">Authorized Steel Distributor</div>
+        <h1>Think Steel,<br><span class="highlight">Think Kuber</span></h1>
+        <p class="hero-desc">Premier iron & steel traders delivering HR coils, sheets, plates & structural steel across India — with unmatched quality, inventory depth & on-time delivery.</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Get Started →</a>
+          <a href="#about" class="btn btn-outline">Learn More</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-stat-grid">
+            <div class="hero-stat">
+              <div class="num">20+</div>
+              <div class="label">Years Experience</div>
+            </div>
+            <div class="hero-stat">
+              <div class="num">500+</div>
+              <div class="label">Happy Clients</div>
+            </div>
+            <div class="hero-stat">
+              <div class="num">50K+</div>
+              <div class="label">MT Delivered</div>
+            </div>
+            <div class="hero-stat">
+              <div class="num">24/7</div>
+              <div class="label">Support</div>
+            </div>
+          </div>
+          <div class="hero-steel-bar"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPETITIVE EDGE -->
+  <section id="edge">
+    <div class="container">
+      <span class="section-tag reveal">Why Choose Us</span>
+      <h2 class="section-title reveal">Our Competitive Edge</h2>
+      <p class="section-desc reveal">Built on trust, scale, and an unwavering commitment to quality steel distribution.</p>
+      <div class="edge-grid">
+        <div class="edge-card reveal">
+          <div class="card-num">01</div>
+          <div class="icon">🏭</div>
+          <h3>Massive Inventory</h3>
+          <p>Warehouse facilities across key industrial hubs ensure large inventories are ready for immediate order fulfillment — no waiting, no delays.</p>
+        </div>
+        <div class="edge-card reveal">
+          <div class="card-num">02</div>
+          <div class="icon">🎯</div>
+          <h3>Our Mission</h3>
+          <p>To supply and deliver top-quality steel products in a sustainable, cost-effective manner while providing exceptional customer service at every touchpoint.</p>
+        </div>
+        <div class="edge-card reveal">
+          <div class="card-num">03</div>
+          <div class="icon">🔭</div>
+          <h3>Our Vision</h3>
+          <p>Intelligent growth that simplifies steel procurement for clients while setting new benchmarks in distribution efficiency and service excellence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <span class="section-tag reveal">About Us</span>
+      <h2 class="section-title reveal">Leading End-to-End Steel Distributors</h2>
+      <div class="about-grid">
+        <div class="about-image reveal">
+          <div class="about-image-overlay"></div>
+          <div class="about-exp-badge">
+            <div class="big">20+ Years</div>
+            <div class="small">In the Steel Industry</div>
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <p>Welcome to <strong>Kuber Associates</strong> — your trusted partner in iron and steel trading. We specialize in HR Products including Coils, Sheets, Plates, and structural steel, serving wholesale and retail clients across North India and beyond.</p>
+          <p>Associated with India's leading steel manufacturers, we deliver premium-grade materials with the trust, transparency, and efficiency that modern industries demand.</p>
+          <div class="about-features">
+            <div class="about-feature"><span class="check">✓</span> TATA Steel Authorized Partner</div>
+            <div class="about-feature"><span class="check">✓</span> ISO Quality Standards</div>
+            <div class="about-feature"><span class="check">✓</span> Pan-India Delivery Network</div>
+            <div class="about-feature"><span class="check">✓</span> Competitive Bulk Pricing</div>
+            <div class="about-feature"><span class="check">✓</span> Custom Cut-to-Length</div>
+            <div class="about-feature"><span class="check">✓</span> Dedicated Account Managers</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline-section" id="journey">
+    <div class="container">
+      <span class="section-tag reveal">Our Journey</span>
+      <h2 class="section-title reveal">Two Decades of Steel Excellence</h2>
+      <p class="section-desc reveal">From a small trading desk to one of the region's most trusted steel distributors.</p>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-year">2004</div>
+          <h4>The Beginning</h4>
+          <p>Kuber Associates was founded with a vision to bridge the gap between steel manufacturers and industrial buyers, starting with secondary steel trading in retail and B2B segments.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-year">2010</div>
+          <h4>Expansion & Growth</h4>
+          <p>Expanded operations with dedicated warehouse facilities and became an authorized distributor of HR products, serving fabrication, tube manufacturing, and cold rolling industries.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-year">2016</div>
+          <h4>Regional Leadership</h4>
+          <p>Grew exponentially across Rajasthan and NCR, establishing long-term partnerships with major steel mills and building a team of 40+ industry experts.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-year">2020</div>
+          <h4>TATA Steel Partnership</h4>
+          <p>Became an authorized distributor for TATA Steel Ltd., strengthening our product portfolio with premium-grade HR coils, sheets, and plates.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-year">2024</div>
+          <h4>50,000+ MT Milestone</h4>
+          <p>Crossed 50,000 metric tons in cumulative deliveries, continuing to power India's manufacturing, infrastructure, and fabrication sectors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-box reveal">
+          <div class="counter" data-target="500">0</div>
+          <div class="stat-label">Satisfied Clients</div>
+        </div>
+        <div class="stat-box reveal">
+          <div class="counter" data-target="120">0</div>
+          <div class="stat-label">Industries Served</div>
+        </div>
+        <div class="stat-box reveal">
+          <div class="counter" data-target="50000">0</div>
+          <div class="stat-label">Metric Tons Delivered</div>
+        </div>
+        <div class="stat-box reveal">
+          <div class="counter" data-target="15">0</div>
+          <div class="stat-label">Warehouse Locations</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products">
+    <div class="container">
+      <span class="section-tag reveal">Product Portfolio</span>
+      <h2 class="section-title reveal">Quality Steel Solutions for Every Need</h2>
+      <p class="section-desc reveal">Whether you need small batches or bulk quantities, our team delivers on time — every time.</p>
+      <div class="products-grid">
+        <div class="product-card reveal">
+          <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80')"></div>
+          <div class="product-body">
+            <span class="product-tag">Hot Rolled</span>
+            <h3>HR Coils</h3>
+            <p>High-grade hot rolled steel coils for industrial applications — tube manufacturing, cold rolling, and fabrication.</p>
+          </div>
+        </div>
+        <div class="product-card reveal">
+          <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1587293852726-70cdb56c0406?w=600&q=80')"></div>
+          <div class="product-body">
+            <span class="product-tag">Flat Steel</span>
+            <h3>HR Sheets & Plates</h3>
+            <p>Premium rolling slabs with customizable thickness and width — ideal for structural and manufacturing needs.</p>
+          </div>
+        </div>
+        <div class="product-card reveal">
+          <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&q=80')"></div>
+          <div class="product-body">
+            <span class="product-tag">Specialized</span>
+            <h3>HRSPO Material</h3>
+            <p>Skin-passed, oiled & pickled material for auto components, cable trays, storage racks & flat steel applications.</p>
+          </div>
+        </div>
+        <div class="product-card reveal">
+          <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1613665813447-82a78c468508?w=600&q=80')"></div>
+          <div class="product-body">
+            <span class="product-tag">Structural</span>
+            <h3>MS Chequered Plates</h3>
+            <p>Rust-resistant chequered plates with superior finish — trusted across construction and industrial flooring.</p>
+          </div>
+        </div>
+        <div class="product-card reveal">
+          <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=80')"></div>
+          <div class="product-body">
+            <span class="product-tag">Infrastructure</span>
+            <h3>Structural Steel</h3>
+            <p>Beams, angles, channels & TMT bars for construction, bridges, and heavy infrastructure projects.</p>
+          </div>
+        </div>
+        <div class="product-card reveal">
+          <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&q=80')"></div>
+          <div class="product-body">
+            <span class="product-tag">Custom</span>
+            <h3>Cut-to-Length Services</h3>
+            <p>Precision cutting and slitting services tailored to your exact specifications and project requirements.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding: 3rem 0;">
+    <div class="cta-banner reveal">
+      <div>
+        <h2>Discover the Strength of Premium Steel</h2>
+        <p>Trust the expertise of an authorized distributor. Contact us today.</p>
+      </div>
+      <a href="#contact" class="btn">Contact Us Today →</a>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <span class="section-tag reveal">Testimonials</span>
+      <h2 class="section-title reveal">What Our Clients Say</h2>
+      <div class="testimonial-slider reveal">
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-card">
+            <div class="quote-icon">"</div>
+            <blockquote>Kuber Associates has been an invaluable partner in our manufacturing business. Their expertise in steel selection and commitment to quality have been critical to our success. Always responsive, always reliable.</blockquote>
+            <div class="testimonial-author">Mr. Rajesh Sharma</div>
+            <div class="testimonial-role">Director, Sharma Fabrications Pvt. Ltd.</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="quote-icon">"</div>
+            <blockquote>We've been sourcing from Kuber for tube manufacturing for years. Their consistent supply of TATA Steel material helps us create durable products. Their service is truly exceptional.</blockquote>
+            <div class="testimonial-author">Mr. Amit Verma</div>
+            <div class="testimonial-role">CEO, Verma Tube Industries</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="quote-icon">"</div>
+            <blockquote>As a vendor for a leading machinery manufacturer, we need suppliers who deliver on time at competitive prices. Kuber Associates consistently exceeds expectations — quality, grades, and customer service are top-notch.</blockquote>
+            <div class="testimonial-author">Ms. Priya Mehta</div>
+            <div class="testimonial-role">Procurement Head, Mehta Engineering Works</div>
+          </div>
+        </div>
+        <div class="testimonial-dots" id="testimonialDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <span class="section-tag reveal">Contact Us</span>
+      <h2 class="section-title reveal">Let's Build Something Strong Together</h2>
+      <div class="contact-grid">
+        <div class="reveal">
+          <div class="contact-info-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4>Office Address</h4>
+              <p>Plot 42, Industrial Area Phase-II,<br>Jaipur, Rajasthan 302013</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <h4>Phone</h4>
+              <p>+91 98765 43210<br>+91 98765 43211</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <h4>Email</h4>
+              <p>info@kuberassociates.com<br>sales@kuberassociates.com</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">🕐</div>
+            <div>
+              <h4>Business Hours</h4>
+              <p>Mon – Sat: 9:00 AM – 7:00 PM</p>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contactForm">
+          <div class="form-row">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Email Address" required />
+          </div>
+          <div class="form-row">
+            <input type="tel" placeholder="Phone Number" />
+            <select>
+              <option value="">Select Product Interest</option>
+              <option>HR Coils</option>
+              <option>HR Sheets & Plates</option>
+              <option>HRSPO Material</option>
+              <option>MS Chequered Plates</option>
+              <option>Structural Steel</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <textarea placeholder="Tell us about your requirements..."></textarea>
+          <button type="submit" class="btn btn-primary" style="justify-content:center;">Send Inquiry →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <div class="logo-icon">K</div>
+          <div class="logo-text">
+            <span>KUBER ASSOCIATES</span>
+            <span>Iron & Steel Traders</span>
+          </div>
+        </a>
+        <p>Your trusted partner for premium iron and steel products. Delivering strength, quality, and reliability across India since 2004.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#journey">Our Journey</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#products">HR Coils</a></li>
+          <li><a href="#products">HR Sheets</a></li>
+          <li><a href="#products">HR Plates</a></li>
+          <li><a href="#products">Structural Steel</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:info@kuberassociates.com">Email Us</a></li>
+          <li><a href="tel:+919876543210">Call Us</a></li>
+          <li><a href="#contact">Get a Quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Kuber Associates. All rights reserved.</p>
+      <p>Iron & Steel Traders · Authorized Distributor</p>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    // Counter animation
+    const counters = document.querySelectorAll('.counter');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = +el.dataset.target;
+        const duration = 2000;
+        const start = performance.now();
+        const suffix = target >= 1000 ? '+' : '+';
+
+        function tick(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const val = Math.floor(eased * target);
+          el.textContent = val >= 1000 ? (val / 1000).toFixed(0) + 'K' + suffix : val + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        counterObserver.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(c => counterObserver.observe(c));
+
+    // Testimonial slider
+    const track = document.getElementById('testimonialTrack');
+    const dotsContainer = document.getElementById('testimonialDots');
+    const slides = track.children;
+    let currentSlide = 0;
+
+    for (let i = 0; i < slides.length; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+
+    function goToSlide(n) {
+      currentSlide = n;
+      track.style.transform = `translateX(-${n * 100}%)`;
+      dotsContainer.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === n));
+    }
+
+    setInterval(() => goToSlide((currentSlide + 1) % slides.length), 6000);
+
+    // Contact form
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      btn.textContent = '✓ Inquiry Sent!';
+      btn.style.background = '#22c55e';
+      setTimeout(() => {
+        btn.textContent = 'Send Inquiry →';
+        btn.style.background = '';
+        e.target.reset();
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
