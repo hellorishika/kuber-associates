@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kuber Associates | Iron &amp; Steel Traders, Jaipur</title>
-<meta name="description" content="Think Trust, Think Kuber. Iron and steel traders in Jaipur since 2006 — chequered plates, CR sheets, MS plates and HR sheets from 0.50 mm to 20 mm, with bulk pricing and fast delivery.">
+<title>Kuber Associates | Iron &amp; Steel Merchant &amp; Suppliers, Jaipur</title>
+<meta name="description" content="Think Trust, Think Kuber. Iron and steel merchant and suppliers in Jaipur since 2006 — chequered plates, CR sheets, MS plates and HR sheets from 0.50 mm to 20 mm, with bulk pricing and fast delivery.">
 <meta name="author" content="Kuber Associates">
 <meta name="theme-color" content="#12161C">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Kuber Associates">
-<meta property="og:title" content="Kuber Associates | Iron &amp; Steel Traders, Jaipur">
+<meta property="og:title" content="Kuber Associates | Iron &amp; Steel Merchant &amp; Suppliers, Jaipur">
 <meta property="og:description" content="Think Trust, Think Kuber. Chequered plates, CR sheets, MS plates and HR sheets from 0.50 mm to 20 mm. Serving the trade since 2006.">
 <meta property="og:image" content="img/facade.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='18'%20fill='%2312161C'/%3E%3Cpath%20d='M30%2026v48M30%2050l26-24M30%2050l28%2024'%20stroke='%23E2600C'%20stroke-width='9'%20stroke-linecap='round'%20stroke-linejoin='round'%20fill='none'/%3E%3C/svg%3E">
@@ -97,7 +97,13 @@ h3{font-size:clamp(1.4rem,2.5vw,1.85rem)}
   display:grid;place-items:center;font-family:var(--ff-d);font-size:1.55rem;color:#fff;line-height:1;padding-top:3px;
 }
 .logo .t{font-family:var(--ff-d);font-size:1.4rem;color:#fff;letter-spacing:.045em;line-height:1;display:block}
-.logo .s{display:block;font-size:9.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--steel);margin-top:3px}
+.logo .s{
+  display:block;font-size:9.5px;font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--steel);margin-top:3px;white-space:nowrap;
+}
+/* "Merchant & Suppliers" is a long descriptor — tighten it rather than let it wrap */
+@media (max-width:600px){.logo .s{font-size:8px;letter-spacing:.08em}}
+@media (max-width:380px){.logo .s{font-size:7.5px;letter-spacing:.05em}}
 .menu{display:none;gap:30px;margin-right:8px}
 @media (min-width:900px){.menu{display:flex}}
 .menu a{text-decoration:none;color:#C8CFD8;font-size:.95rem;font-weight:500;position:relative;padding:6px 0;transition:color .2s}
@@ -356,7 +362,7 @@ section{position:relative}
       <span class="k" aria-hidden="true">K</span>
       <span>
         <span class="t">KUBER ASSOCIATES</span>
-        <span class="s">Iron &amp; Steel Traders</span>
+        <span class="s">Iron &amp; Steel Merchant &amp; Suppliers</span>
       </span>
     </a>
     <nav class="menu" aria-label="Primary">
@@ -383,7 +389,7 @@ section{position:relative}
         <span class="tagbar"><i></i>Serving the trade since 2006</span>
         <h1>Think Trust,<em>Think Kuber</em></h1>
         <p class="lead">
-          Iron and steel traders supplying chequered plates, CR sheets, MS plates and HR sheets
+          Iron and steel merchant and suppliers, stocking chequered plates, CR sheets, MS plates and HR sheets
           from 0.50 mm to 20 mm — with the inventory depth, bulk pricing and fast delivery that
           keeps your work moving.
         </p>
@@ -557,7 +563,7 @@ section{position:relative}
         <h2 style="margin-top:16px">A trusted name in Jaipur steel</h2>
         <div class="badge-yrs"><b>20+</b><span>Years in the steel industry</span></div>
         <p class="lead">
-          Kuber Associates is a leading iron and steel trading firm based in Jaipur. Since 2006 we
+          Kuber Associates is a leading iron and steel merchant and supplier based in Jaipur. Since 2006 we
           have supplied sheets and plates to fabricators, contractors, workshops and manufacturers
           across the region — committed, throughout, to delivering quality products and services.
         </p>
@@ -702,7 +708,7 @@ section{position:relative}
           <span class="k" aria-hidden="true">K</span>
           <span>
             <span class="t">KUBER ASSOCIATES</span>
-            <span class="s">Iron &amp; Steel Traders</span>
+            <span class="s">Iron &amp; Steel Merchant &amp; Suppliers</span>
           </span>
         </a>
         <p class="blurb">
